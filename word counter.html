@@ -1,0 +1,25 @@
+
+<html>
+<head>
+    <title>Word Counter</title>
+    <script>
+        function countWords() {
+            var text = document.getElementById("text-input").value;
+            var words = text.split(/\s+/).filter(function(word) {
+                return word.length > 0; // Remove empty words
+            });
+            var wordCount = words.length;
+
+            document.getElementById("word-count").textContent = "Word Count: " + wordCount;
+        }
+    </script>
+</head>
+<body bgcolor="crystal blue">
+
+<h1>Word Counter</h1>
+
+<textarea id="text-input" rows="10" cols="50" oninput="countWords()"></textarea>
+<p id="word-count">Word Count: 0</p>
+
+</body>
+</html>
